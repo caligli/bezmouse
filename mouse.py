@@ -9,28 +9,7 @@ from multiprocessing import Process
 #WORKING DIRECTORY
 CWD = os.path.dirname(os.path.realpath(__file__))
 
-pyautogui.MINIMUM_DURATION = 0.01
-
-
-def real_click():
-    '''This function clicks the mouse with realistic errors:
-        occasional accidental right click
-        occasional double click
-        occasional no click
-    '''
-    if randint(1, 19) != 1:
-        sleep(93 / randint(83,201))
-        pyautogui.click()
-    else:
-        tmp_rand = randint(1, 3)
-        if tmp_rand == 1:
-            #double click
-            pyautogui.click()
-            sleep(randint(43, 113) / 1000)
-            pyautogui.click()
-        elif tmp_rand == 2:
-            pyautogui.click(button = 'right')
-            
+pyautogui.MINIMUM_DURATION = 0.01            
 
 def move_to_img(img_name, deviation, speed):
     '''
