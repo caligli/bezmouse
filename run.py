@@ -7,7 +7,7 @@ import argparse
 
 # speed:
 # 1 for fastest
-# < 1 for slow movement (example 0.5)
+# > 1 for slow movement (example: 500)
 
 
 # FLAG CONTROL EXAMPLE:
@@ -31,7 +31,7 @@ parser.add_argument('y', type=int, help='y axis coordinate')
 parser.add_argument('width', type=int, help='width from upleft corner')
 parser.add_argument('height', type=int, help='height from upleft corner')
 parser.add_argument('deviation', type=int, help='0 <> 100')
-parser.add_argument('speed', type=int, help='0 <> 1')
+parser.add_argument('speed', type=int, help='1 <> INF')
 args = parser.parse_args()
 
 mouse.move_to_area(args.x, args.y, args.width, args.height, args.deviation, args.speed)
